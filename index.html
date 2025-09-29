@@ -6,6 +6,26 @@
     <title>GameMania - Melhores Jogos para Todos</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos básicos para o funcionamento do JavaScript (Adicione isso ao seu style.css) */
+        .hidden {
+            display: none !important;
+        }
+        .game-details {
+            border-left: 5px solid #ff5722; /* Cor da sua GameMania */
+            padding: 15px;
+            margin-top: 20px;
+            background-color: #f7f7f7;
+        }
+        .game-details h4 {
+            margin-top: 0;
+            color: #ff5722;
+        }
+        /* Garantindo que os links de dicas sejam botões clicáveis */
+        .btn-detalhes, .btn-large {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,7 +36,8 @@
     </header>
 
     <main class="container">
-        <section class="game-list">
+        
+        <section class="game-list" id="main-games">
             <h2>Nossas Escolhas: Jogos Incríveis</h2>
             
             <div class="game-card">
@@ -25,7 +46,12 @@
                     <h3>Minecraft</h3>
                     <p class="category action-build">Ação & Construção</p>
                     <p>Um clássico da **liberdade criativa**. Explore mundos infinitos, construa cidades épicas, enfrente monstros ou relaxe na sua fazenda. Perfeito para soltar a imaginação e jogar com amigos.</p>
-                    <a href="#" class="btn-detalhes">Ver Dicas</a>
+                    <a href="#" class="btn-detalhes" data-target="details-minecraft">Ver Dicas</a>
+                </div>
+                <div class="game-details hidden" id="details-minecraft">
+                    <h4>Dicas Profissionais de Minecraft</h4>
+                    <p>Comece sempre coletando madeira antes do sol se pôr! No modo Sobrevivência, crie uma picareta e um abrigo simples na primeira noite. Para os criativos, explore o Modo Criativo para ter blocos ilimitados e voar!</p>
+                    <p><strong>Ideal para:</strong> Criatividade, Resolução de Problemas, Colaboração.</p>
                 </div>
             </div>
 
@@ -35,7 +61,12 @@
                     <h3>The Sims 4</h3>
                     <p class="category simulation">Simulação de Vida</p>
                     <p>Crie personagens (Sims) únicos, construa a casa dos sonhos, comece carreiras e viva histórias emocionantes. Um jogo que estimula a **criatividade** e a **narrativa social**.</p>
-                    <a href="#" class="btn-detalhes">Ver Dicas</a>
+                    <a href="#" class="btn-detalhes" data-target="details-sims4">Ver Dicas</a>
+                </div>
+                 <div class="game-details hidden" id="details-sims4">
+                    <h4>Dicas de Construção no The Sims 4</h4>
+                    <p>Use o truque "bb.moveobjects on" para posicionar itens livremente sem as restrições do jogo! Foque nas necessidades do seu Sim (Fome, Banheiro, Energia) para mantê-lo feliz e progredir na carreira mais rapidamente.</p>
+                    <p><strong>Ideal para:</strong> Gerenciamento, Design de Interiores, Narrativa.</p>
                 </div>
             </div>
 
@@ -45,26 +76,88 @@
                     <h3>Rocket League</h3>
                     <p class="category sport-action">Esporte & Ação</p>
                     <p>É futebol... com carros a jato! Rápido, divertido e cheio de adrenalina. Excelente para desenvolver a **coordenação motora** e o **trabalho em equipe**. Disponível em várias plataformas.</p>
-                    <a href="#" class="btn-detalhes">Ver Dicas</a>
+                    <a href="#" class="btn-detalhes" data-target="details-rocketleague">Ver Dicas</a>
+                </div>
+                 <div class="game-details hidden" id="details-rocketleague">
+                    <h4>Aprenda a Voar no Rocket League!</h4>
+                    <p>Pratique os "Aerials" no modo Treinamento. Saber voar e acertar a bola no ar é o segredo dos profissionais. Lembre-se, mesmo sendo atacante, você precisa defender o gol!</p>
+                    <p><strong>Ideal para:</strong> Reflexo Rápido, Trabalho em Equipe, Competição Amigável.</p>
                 </div>
             </div>
 
-             <div class="game-card reverse">
+            <div class="game-card reverse">
                 <img src="https://via.placeholder.com/400x250?text=Imagem+Stardew+Valley" alt="Imagem do Jogo Stardew Valley">
                 <div class="card-content">
                     <h3>Stardew Valley</h3>
                     <p class="category rpg-casual">RPG & Casual</p>
                     <p>Transforme uma fazenda abandonada em um paraíso. Pesca, mineração, plantio e amizades com os moradores da vila. Um jogo **relaxante** e com um visual pixel art charmoso.</p>
-                    <a href="#" class="btn-detalhes">Ver Dicas</a>
+                    <a href="#" class="btn-detalhes" data-target="details-stardew">Ver Dicas</a>
+                </div>
+                <div class="game-details hidden" id="details-stardew">
+                    <h4>Maximizando sua Fazenda em Stardew Valley</h4>
+                    <p>Priorize regadores e picaretas melhoradas! Plantar morangos no Spring Festival é uma ótima dica para ganhar dinheiro rapidamente. Conversar com os moradores todos os dias melhora sua amizade!</p>
+                    <p><strong>Ideal para:</strong> Paciência, Planejamento, Gerenciamento de Recursos.</p>
                 </div>
             </div>
 
         </section>
+
+        <hr>
+
+        <section class="game-list" id="kids-games">
+            <h2>👶 Jogos Incríveis para Crianças (6-7 Anos)</h2>
+            
+            <div class="game-card">
+                <img src="https://via.placeholder.com/400x250?text=Imagem+Lego+Games" alt="Imagem dos Jogos LEGO">
+                <div class="card-content">
+                    <h3>Jogos LEGO (Ex: Marvel, Star Wars)</h3>
+                    <p class="category action-puzzle">Ação & Quebra-Cabeça</p>
+                    <p>Pegue seus heróis favoritos e os transforme em blocos! Com um humor leve e foco em **resolver quebra-cabeças** e **explorar**, são ideais para jogar em família ou entre amigos.</p>
+                    <a href="#" class="btn-detalhes" data-target="details-lego">Ver Dicas</a>
+                </div>
+                <div class="game-details hidden" id="details-lego">
+                    <h4>Dicas de Colecionáveis LEGO</h4>
+                    <p>Quebre tudo! Praticamente tudo no cenário pode ser destruído para coletar "studs" (a moeda LEGO). Muitos segredos só podem ser revelados usando um personagem com uma habilidade específica, como voar ou superforça.</p>
+                    <p><strong>Ideal para:</strong> Coordenação, Lógica Simples, Foco.</p>
+                </div>
+            </div>
+
+            <div class="game-card reverse">
+                <img src="https://via.placeholder.com/400x250?text=Imagem+Animal+Crossing" alt="Imagem do Jogo Animal Crossing">
+                <div class="card-content">
+                    <h3>Animal Crossing: New Horizons</h3>
+                    <p class="category casual-social">Casual & Social</p>
+                    <p>Crie sua ilha, pesque, colete insetos, decore sua casa e faça amizades com animais fofos! É um jogo sem pressão, perfeito para aprender sobre **rotina**, **cuidado** e **interação social**.</p>
+                    <a href="#" class="btn-detalhes" data-target="details-animalcrossing">Ver Dicas</a>
+                </div>
+                <div class="game-details hidden" id="details-animalcrossing">
+                    <h4>Dicas para sua Ilha em Animal Crossing</h4>
+                    <p>Não venda todos os itens que você coleta! Guarde alguns para o Museu ou para criar novas ferramentas e móveis. Visitar as ilhas de amigos é a melhor forma de conseguir frutas diferentes!</p>
+                    <p><strong>Ideal para:</strong> Paciência, Cuidado com Detalhes, Interação Social.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <hr>
+
+        <section class="hidden" id="categories-section">
+            <h2>🗺️ Explore Mais Categorias</h2>
+            <p>Clique nas categorias abaixo para filtrar (esta é uma demonstração, a funcionalidade de filtro real exigiria mais JavaScript!):</p>
+            <ul>
+                <li>**Aventura e RPG:** Jogos com histórias profundas e evolução de personagem.</li>
+                <li>**Esportes e Corrida:** Aceleração e competição em alta velocidade!</li>
+                <li>**Estratégia e Quebra-Cabeça:** Para quem gosta de pensar e planejar cada passo.</li>
+                <li>**Simulação e Casual:** Jogos relaxantes focados em gerenciar ou criar.</li>
+            </ul>
+        </section>
         
+        <hr>
+
         <aside class="cta-section">
             <h3>Encontre o Seu Estilo de Jogo!</h3>
             <p>O mundo dos games é gigante! Se você gosta de estratégia, aventura, esportes ou quebra-cabeças, há um jogo perfeito esperando por você.</p>
-            <button class="btn-large">Explore Mais Categorias</button>
+            <button class="btn-large" id="btn-explore">Explore Mais Categorias</button>
         </aside>
     </main>
 
@@ -73,5 +166,51 @@
             <p>&copy; 2025 GameMania. Jogos incríveis são para todos!</p>
         </div>
     </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Lógica para o botão "Explore Mais Categorias"
+            const exploreBtn = document.getElementById('btn-explore');
+            const categoriesSection = document.getElementById('categories-section');
+
+            exploreBtn.addEventListener('click', (event) => {
+                event.preventDefault(); // Evita a ação padrão do botão (se houver)
+                // Alterna a classe 'hidden' na seção de categorias
+                categoriesSection.classList.toggle('hidden');
+                
+                // Mudar o texto do botão para indicar se a seção está visível ou oculta
+                if (!categoriesSection.classList.contains('hidden')) {
+                    exploreBtn.textContent = 'Ocultar Categorias';
+                } else {
+                    exploreBtn.textContent = 'Explore Mais Categorias';
+                }
+            });
+
+            // 2. Lógica para os botões "Ver Dicas"
+            const detailBtns = document.querySelectorAll('.btn-detalhes');
+
+            detailBtns.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.preventDefault(); // Evita que a página recarregue
+                    
+                    // Pega o ID da div de detalhes a partir do atributo data-target
+                    const targetId = button.getAttribute('data-target');
+                    const targetDetail = document.getElementById(targetId);
+
+                    if (targetDetail) {
+                        // Alterna a classe 'hidden' na div de detalhes
+                        targetDetail.classList.toggle('hidden');
+
+                        // Mudar o texto do botão
+                        if (!targetDetail.classList.contains('hidden')) {
+                            button.textContent = 'Ocultar Dicas';
+                        } else {
+                            button.textContent = 'Ver Dicas';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
