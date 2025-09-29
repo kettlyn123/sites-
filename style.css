@@ -1,1 +1,272 @@
+/* Importação da Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
 
+/* --- Reset Básico e Variáveis --- */
+:root {
+    /* Cores Principais */
+    --primary-color: #6a0dad;      /* Roxo Vibrante (Aventura) */
+    --primary-light: #9b59b6;      /* Roxo Mais Claro */
+    --secondary-color: #ffcc00;    /* Amarelo Destaque (Energia) */
+    --secondary-dark: #cc9900;     /* Amarelo Escuro */
+
+    /* Cores de Fundo e Texto */
+    --text-dark: #2c3e50;          /* Azul Escuro (Substitui o preto) */
+    --text-light: #ffffff;
+    --bg-light: #f9fbfd;           /* Fundo Quase Branco */
+    --bg-dark: #1f1d2e;            /* Fundo Escuro Moderno */
+
+    /* Sombras */
+    --shadow-soft: 0 5px 15px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.7; /* Melhorando a legibilidade */
+}
+
+.container {
+    width: 90%;
+    max-width: 1280px; /* Um pouco mais largo */
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* --- Cabeçalho (Header) com Degradê --- */
+header {
+    /* Degradê Roxo/Azul para um visual moderno */
+    background: linear-gradient(135deg, var(--primary-color) 0%, #3498db 100%);
+    color: var(--text-light);
+    padding: 60px 0; /* Mais espaçamento */
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 5px;
+    font-weight: 800; /* Mais impacto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.3em;
+    font-weight: 300; /* Mais leve */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Lista de Jogos (Cards) --- */
+.game-list {
+    padding: 60px 0;
+}
+
+.game-list h2 {
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    font-weight: 700;
+    position: relative;
+}
+
+/* Linha de destaque sob o título */
+.game-list h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.game-card {
+    display: flex;
+    background: var(--text-light);
+    margin-bottom: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.game-card img {
+    width: 45%; /* Aumentando um pouco o espaço da imagem */
+    min-height: 280px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.game-card:hover img {
+    transform: scale(1.03); /* Leve zoom ao passar o mouse */
+}
+
+.card-content {
+    width: 55%;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-content h3 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.category {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px; /* Borda mais arredondada (pill shape) */
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-size: 0.85em;
+    border: 1px solid;
+}
+
+/* Cores por Categoria - Mais vibrantes */
+.action-build { background-color: #e8f5e9; border-color: #4CAF50; color: #4CAF50; }
+.simulation { background-color: #e3f2fd; border-color: #2196F3; color: #2196F3; }
+.sport-action { background-color: #ffe0b2; border-color: #FF9800; color: #FF9800; }
+.rpg-casual { background-color: #f3e5f5; border-color: #9C27B0; color: #9C27B0; }
+
+/* Botão de Detalhes - Estilo de Destaque */
+.btn-detalhes {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    padding: 12px 25px;
+    border-radius: 30px; /* Botão arredondado */
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-detalhes:hover {
+    background-color: var(--secondary-dark);
+    transform: translateY(-2px);
+}
+
+/* Card reverso (para alternar layout e deixar mais dinâmico) */
+.game-card.reverse {
+    flex-direction: row-reverse;
+}
+
+/* --- Seção de Chamada para Ação (CTA) --- */
+.cta-section {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 70px 50px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    box-shadow: var(--shadow-hover);
+}
+
+.cta-section h3 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    font-weight: 800;
+    color: var(--secondary-color);
+}
+
+.cta-section p {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.btn-large {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: 2px solid var(--text-light); /* Borda de destaque */
+    padding: 18px 40px;
+    font-size: 1.2em;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.btn-large:hover {
+    background-color: var(--primary-light);
+    border-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* --- Rodapé (Footer) --- */
+footer {
+    background-color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.7); /* Cor de texto mais suave */
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+    .game-card img {
+        width: 40%;
+    }
+    .card-content {
+        width: 60%;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+    header p {
+        font-size: 1.1em;
+    }
+
+    /* Empilhando o Card */
+    .game-card, .game-card.reverse {
+        flex-direction: column;
+    }
+
+    .game-card img, .card-content {
+        width: 100%;
+        min-height: auto;
+    }
+    
+    .game-card img {
+        height: 220px; 
+    }
+
+    .card-content {
+        padding: 30px 20px;
+    }
+
+    .cta-section {
+        padding: 50px 20px;
+    }
+
+    .btn-large {
+        padding: 15px 30px;
+        font-size: 1.1em;
+    }
+}
